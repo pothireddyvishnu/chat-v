@@ -6,6 +6,20 @@ import Sidebar from "./Sidebar";
 import Auth from "./Auth";
 import { AuthContext, AuthProvider } from "./AuthContext";
 import { v1 as uuidv1 } from "uuid";
+import hljsDarkUrl from "highlight.js/styles/github-dark.css?url";
+import hljsLightUrl from "highlight.js/styles/github.css?url";
+
+function ensureHljsLink(id, href) {
+	let link = document.getElementById(id);
+	if (!link) {
+		link = document.createElement("link");
+		link.id = id;
+		link.rel = "stylesheet";
+		link.href = href;
+		document.head.appendChild(link);
+	}
+	return link;
+}
 
 function getInitialSidebarState() {
 	if (typeof window === "undefined") return false;
@@ -64,10 +78,12 @@ function AuthGate() {
 
 	useEffect(() => {
 		const theme = user?.theme || "dark";
-		document.documentElement.classList.toggle(
-			"theme-light",
-			theme === "light",
-		);
+		const isLight = theme === "light";
+		document.documentElement.classList.toggle("theme-light", isLight);
+		const darkLink = ensureHljsLink("hljs-theme-dark", hljsDarkUrl);
+		const lightLink = ensureHljsLink("hljs-theme-light", hljsLightUrl);
+		darkLink.disabled = isLight;
+		lightLink.disabled = !isLight;
 	}, [user?.theme]);
 
 	if (loading) {
