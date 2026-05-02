@@ -1,0 +1,94 @@
+html,
+body,
+#root {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+html.theme-light .app,
+html.theme-light .chatWindow,
+html.theme-light .authPage,
+html.theme-light .appLoading {
+	background-color: #f7f7f8;
+}
+
+html.theme-light .sidebar {
+	background-color: #ececec;
+	color: #1a1a1a;
+}
+
+html.theme-light * {
+	color: #1a1a1a;
+}
+
+html.theme-light .aiDiv,
+html.theme-light .userMessage,
+html.theme-light input,
+html.theme-light .authCard,
+html.theme-light .settingsModal,
+html.theme-light .settingsForm input,
+html.theme-light .authCard input,
+html.theme-light .themeOption {
+	background-color: #ffffff;
+	color: #1a1a1a;
+}
+
+html.theme-light .dropDown {
+	background-color: #ffffff;
+	color: #1a1a1a;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+html.theme-light .history li:not(.highlighted):hover {
+	background-color: rgba(0, 0, 0, 0.06);
+}
+
+html.theme-light .highlighted {
+	background-color: #d6e6ff;
+	color: #1a1a1a;
+}
+
+html.theme-light .dropDownItem:hover,
+html.theme-light .hamburger:hover,
+html.theme-light #submit:hover {
+	background-color: rgba(0, 0, 0, 0.06);
+}
+
+html.theme-light #submit span,
+html.theme-light .userIcon {
+	color: #fff;
+}
+
+html.theme-light .info {
+	color: #1a1a1a;
+	opacity: 0.6;
+}
+
+html.theme-light .settingsHeader,
+html.theme-light .settingsTabs {
+	border-color: rgba(0, 0, 0, 0.1);
+}
+
+html.theme-light .settingsTabs button {
+	color: #1a1a1a;
+	opacity: 0.7;
+}
+
+html.theme-light .settingsTabs button:hover {
+	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+html.theme-light .settingsTabs button.active {
+	opacity: 1;
+}
+
+html.theme-light .dangerRow {
+	border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+html.theme-light .settingsClose:hover {
+	background-color: rgba(0, 0, 0, 0.06);
+}
